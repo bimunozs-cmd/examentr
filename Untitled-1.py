@@ -72,14 +72,11 @@ def cuota_t_plan ():
             print("ingrese l tipo que indica")
             return cuota_t_plan()
     
-def busqueda_por_rango(precion_min,preciomax,rango):
-    rango == []
+def busqueda_por_rango(precion_min,preciomax,):
+   
     i == 0
 
     try:
-
-        precion_min == int(input("ingree el precio minimo = "))
-        preciomax == int(input("ingrese el precio maximo = "))
 
         if precion_min > preciomax or precion_min <= 0 or preciomax <= 0:
              raise ValueError ("ingrese los valores correctamnte o valors mayor a 0 ")
@@ -94,6 +91,22 @@ def busqueda_por_rango(precion_min,preciomax,rango):
 
     except ValueError:
          print("error vuelva a intentarlo")
+
+
+def cambio_precio ():
+    i == 0
+     
+    print("ingrs el codigo de la inscripcion para modifivar su precio  ")
+    try:
+        code = input("ingrese el codigo = ")
+        for i in inscripciones:
+            if inscripciones [i][0] == code:
+                precio_mod = int(input("ingrese el recio que desea modificar = "))
+                if precio_mod <= 0:
+                    raise ValueError ("ingrese un precio mayor a 0")
+    except ValueError:
+         print("ingrese bien los valores") 
+
 
     
 
@@ -112,8 +125,7 @@ while True:
     elif op == 2:
             busqueda_por_rango()
     elif op == 3:
-         print()
-         
+         cambio_precio()
     elif op == 4:
          print()
          
